@@ -17,7 +17,7 @@ func prepareStmt(db *sql.DB, query string) *sql.Stmt {
 	}
 	stmt, err := db.Prepare(query)
 	if err != nil {
-		log.Fatal("Could not prepare `" + query + "`: " + err.Error())
+		log.Fatal("Could not  prepare `" + query + "`: " + err.Error())
 	}
 	return stmt
 }
