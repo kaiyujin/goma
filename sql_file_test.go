@@ -5,9 +5,9 @@ import (
 )
 
 func TestGet(t *testing.T) {
-	s, err := get("test_sql/select_basic.sql")
+	s, err := getFile("test_sql/select_basic.sql")
 	if err != nil {
-		t.Errorf("get is fail. %s, %s", s, err)
+		t.Errorf("getFile is fail. %s, %s", s, err)
 		return
 	}
 	if s != `select
@@ -16,6 +16,10 @@ from
   test
 ;
 ` {
-		t.Errorf("get is fail. %s %s", s, err)
+		t.Errorf("getFile is fail. %s %s", s, err)
 	}
+}
+
+func TestParse() {
+	s, err := getFile("test_sql/select_basic.sql")
 }
